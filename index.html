@@ -4,60 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cidadania Digital & IA - Combate às Deepfakes</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="header-container">
             <h1>Cidadania Digital</h1>
-            <button id="toggle-dark-mode" class="btn-mode" aria-label="Alternar modo escuro">🌓 Modo Escuro</button>
+            <button id="toggle-dark-mode" class="btn-mode">🌓 Modo Escuro</button>
         </div>
     </header>
 
     <main>
         <section id="introducao">
-            <h2>O Impacto das Deepfakes e da Desinformação</h2>
-            <p>Com o avanço da Inteligência Artificial, a criação de mídias falsas hiper-realistas (deepfakes) tornou-se um grande desafio. Entender como identificar essas manipulações é fundamental para exercer uma cidadania digital segura e ética.</p>
+            <h2>O Impacto das Deepfakes na Sociedade</h2>
+            <p>Com o avanço da Inteligência Artificial, a criação de mídias falsas hiper-realistas (deepfakes) tornou-se um desafio social. Entender como identificar essas manipulações é fundamental para a cidadania digital.</p>
         </section>
 
         <section id="dicas" class="cards-container">
             <div class="card">
                 <h3>🔍 Como Identificar?</h3>
-                <p>Preste atenção em piscadas de olhos não naturais, falhas na iluminação do rosto e áudios que parecem robóticos ou dessincronizados.</p>
+                <p>Preste atenção em piscadas de olhos não naturais, falhas na iluminação do rosto e áudios que parecem robóticos.</p>
             </div>
             <div class="card">
                 <h3>⚠️ O Perigo</h3>
-                <p>A desinformação automatizada pode arruinar reputações, manipular debates públicos e espalhar pânico em instantes.</p>
+                <p>A desinformação automatizada pode arruinar reputações e manipular debates públicos em instantes.</p>
             </div>
         </section>
 
         <section id="quiz-section">
-            <h2>Desafio: Você sabe identificar um Deepfake?</h2>
-            <p>Responda à pergunta abaixo para testar seus conhecimentos comunitários:</p>
+            <h2>Desafio Anti-Desinformação</h2>
+            <p>Se você receber um vídeo bombástico de uma pessoa pública falando algo absurdo, qual deve ser sua atitude?</p>
             
             <form id="quiz-form">
-                <label class="quiz-label">Se você receber um vídeo bombástico de um político ou celebridade falando algo absurdo, qual deve ser sua primeira atitude?</label>
-                
                 <div class="options">
                     <label class="option-container">
                         <input type="radio" name="quiz-answer" value="errada1" required>
-                        Compartilhar imediatamente nos grupos de família para alertar a todos.
+                        <span>Compartilhar imediatamente para alertar o máximo de pessoas.</span>
                     </label>
+                    
                     <label class="option-container">
                         <input type="radio" name="quiz-answer" value="correta">
-                        Desconfiar, verificar se portais de notícias confiáveis confirmam o fato e checar imperfeições no vídeo.
+                        <span>Desconfiar, verificar portais de notícias e checar imperfeições no vídeo.</span>
                     </label>
+                    
                     <label class="option-container">
                         <input type="radio" name="quiz-answer" value="errada2">
-                        Acreditar totalmente, afinal, se há um vídeo, com certeza é uma prova real.
+                        <span>Acreditar totalmente, afinal, imagens e vídeos não mentem.</span>
                     </label>
                 </div>
 
                 <button type="submit" id="btn-submit">Verificar Resposta</button>
             </form>
 
-            <div id="quiz-result" class="hidden"></div>
+            <div id="quiz-result"></div>
         </section>
     </main>
 
@@ -65,6 +65,6 @@
         <p>&copy; 2026 - Desenvolvido para o Projeto de Educação Digital e IA. Conteúdo Autoral.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
