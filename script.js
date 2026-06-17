@@ -1,51 +1,48 @@
-// Arquivo de interatividade - Cidadania Digital 2026
-
+// Aguarda o carregamento completo da página
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. FUNCIONALIDADE: MODO ESCURO (Acessibilidade) ---
+    // 1. MODO ESCURO
     const btnDarkMode = document.getElementById('toggle-dark-mode');
     
-    btnDarkMode.addEventListener('click', () => {
-        // Alterna a classe dark-mode no elemento body
-        document.body.classList.toggle('dark-mode');
-        
-        // Altera o texto do botão de forma dinâmica
-        if (document.body.classList.contains('dark-mode')) {
-            btnDarkMode.textContent = '☀️ Modo Claro';
-        } else {
-            btnDarkMode.textContent = '🌓 Modo Escuro';
-        }
-    });
+    if (btnDarkMode) {
+        btnDarkMode.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                btnDarkMode.textContent = '☀️ Modo Claro';
+            } else {
+                btnDarkMode.textContent = '🌓 Modo Escuro';
+            }
+        });
+    }
 
-    // --- 2. FUNCIONALIDADE: VALIDADOR DO QUIZ ANTI-DESINFORMAÇÃO ---
+    // 2. VALIDADOR DO QUIZ
     const quizForm = document.getElementById('quiz-form');
     const quizResult = document.getElementById('quiz-result');
 
-    quizForm.addEventListener('submit', (event) => {
-        // Evita que a página recarregue ao enviar o formulário
-        event.preventDefault();
+    if (quizForm && quizResult) {
+        quizForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Impede a página de dar F5
 
-        // Captura a opção selecionada pelo usuário
-        const selectedOption = document.querySelector('input[name="quiz-answer"]:checked');
-        
-        if (!selectedOption) return;
+            // Pega o input marcado
+            const selected = document.querySelector('input[name="quiz-answer"]:checked');
+            
+            if (!selected) return;
 
-        // Processa o valor da variável coletada
-        const userAswer = selectedOption.value;
+            const resposta = selected.value;
 
-        // Limpa classes anteriores do container de resultado
-        quizResult.className = ''; 
+            // Reseta classes antigas
+            quizResult.className = '';
+            quizResult.style.display = 'block'; // Torna visível
 
-        // Manipulação do DOM para exibir o feedback adequado
-        if (userAswer === 'correta') {
-            quizResult.textContent = '✅ Parabéns! Você agiu como um cidadão digital consciente. Verificar fontes e desconfiar de mídias absurdas evita a propagação de deepfakes.';
-            quizResult.classList.add('correct-style');
-        } else {
-            quizResult.textContent = '❌ Atenção! Essa ação ajuda a espalhar a desinformação automatizada. O correto é sempre desconfiar e checar em canais oficiais antes de interagir ou repassar.';
-            quizResult.classList.add('wrong-style');
-        }
-
-        // Mostra a div de resultado removendo qualquer ocultação implícita
-        quizResult.style.display = 'block';
-    });
+            // Verifica e manipula o DOM
+            if (resposta === 'correta') {
+                quizResult.textContent = '✅ Resposta Correta! Mídias bombásticas criadas por IA exigem verificação rigorosa antes do compartilhamento para frear a desinformação.';
+                quizResult.classList.add('correct');
+            } else {
+                quizResult.textContent = '❌ Ops, resposta incorreta! Compartilhar sem checar ou acreditar cegamente alimenta redes de desinformação automatizada por IA.';
+                quizResult.classList.add('wrong');
+            }
+        });
+    }
 });
