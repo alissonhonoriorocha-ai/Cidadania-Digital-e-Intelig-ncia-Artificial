@@ -10,61 +10,47 @@
 
     <header>
         <div class="header-container">
-            <h1>Cidadania Digital</h1>
+            <h1>Cidadania Digital 2026</h1>
             <button id="toggle-dark-mode" class="btn-mode">🌓 Modo Escuro</button>
         </div>
     </header>
 
     <main>
-        <section id="introducao">
-            <h2>O Impacto das Deepfakes na Sociedade</h2>
-            <p>Com o avanço da Inteligência Artificial, a criação de mídias falsas hiper-realistas (deepfakes) tornou-se um desafio social. Entender como identificar essas manipulações é fundamental para a cidadania digital.</p>
-        </section>
-
-        <section id="dicas" class="cards-container">
-            <div class="card">
-                <h3>🔍 Como Identificar?</h3>
-                <p>Preste atenção em piscadas de olhos não naturais, falhas na iluminação do rosto e áudios que parecem robóticos.</p>
+        <section id="conteudo-abas">
+            <div class="tabs-buttons">
+                <button class="tab-btn active" data-tab="deepfakes">O que são Deepfakes?</button>
+                <button class="tab-btn" data-tab="desinformacao">Desinformação por IA</button>
+                <button class="tab-btn" data-tab="guia-pratico">Guia de Identificação</button>
+                <button class="tab-btn" data-tab="leis-etica">Leis e Ética Digital</button>
+                <button class="tab-btn" data-tab="futuro-ia">O Futuro da Verdade</button>
             </div>
-            <div class="card">
-                <h3>⚠️ O Perigo</h3>
-                <p>A desinformação automatizada pode arruinar reputações e manipular debates públicos em instantes.</p>
-            </div>
-        </section>
 
-        <section id="quiz-section">
-            <h2>Desafio Anti-Desinformação</h2>
-            <p>Se você receber um vídeo bombástico de uma pessoa pública falando algo absurdo, qual deve ser sua atitude?</p>
-           
-            <form id="quiz-form">
-                <div class="options">
-                    <label class="option-container">
-                        <input type="radio" name="quiz-answer" value="errada1" required>
-                        <span>Compartilhar imediatamente para alertar o máximo de pessoas.</span>
-                    </label>
-                   
-                    <label class="option-container">
-                        <input type="radio" name="quiz-answer" value="correta">
-                        <span>Desconfiar, verificar portais de notícias e checar imperfeições no vídeo.</span>
-                    </label>
-                   
-                    <label class="option-container">
-                        <input type="radio" name="quiz-answer" value="errada2">
-                        <span>Acreditar totalmente, afinal, imagens e vídeos não mentem.</span>
-                    </label>
+            <div class="tabs-content">
+                <div id="deepfakes" class="tab-panel active">
+                    <h2>Mídias Sintéticas Manipuladas</h2>
+                    <p>Deepfakes são vídeos, áudios ou imagens gerados por Inteligência Artificial (redes neurais gerativas) que substituem o rosto ou a voz de uma pessoa real pela de outra. Embora tenham uso legítimo no cinema, são frequentemente usadas para criar notícias falsas hiper-realistas.</p>
+                </div>
+                
+                <div id="desinformacao" class="tab-panel">
+                    <h2>A Automação do Caos</h2>
+                    <p>A IA permite que robôs criem e distribuam textos falsos e perfis sintéticos em escala massiva. Isso satura as redes sociais com informações distorcidas, minando a confiança nas instituições e manipulando a opinião pública de forma automatizada.</p>
                 </div>
 
-                <button type="submit" id="btn-submit">Verificar Resposta</button>
-            </form>
+                <div id="guia-pratico" class="tab-panel">
+                    <h2>Checklist Anti-Deepfake</h2>
+                    <p>Ao analisar um vídeo suspeito, faça três perguntas:</p>
+                    <ul>
+                        <li><strong>O movimento dos olhos é natural?</strong> Muitas IAs falham ao renderizar o piscar de olhos ou o reflexo da luz na retina.</li>
+                        <li><strong>O áudio condiz com os lábios?</strong> Sincronias labiais imperfeitas e cortes bruscos na voz indicam manipulação.</li>
+                        <li><strong>O cenário ao fundo faz sentido?</strong> Bordas borradas ao redor do rosto ou sombras inconsistentes revelam montagens.</li>
+                    </ul>
+                </div>
 
-            <div id="quiz-result"></div>
-        </section>
-    </main>
+                <div id="leis-etica" class="tab-panel">
+                    <h2>Legislação e Responsabilidade</h2>
+                    <p>A criação e a disseminação de deepfakes sem consentimento, especialmente para prejudicar a reputação de alguém ou fraudar sistemas, já encontram barreiras legais e punições no código penal. A ética digital exige que o criador de conteúdo sempre identifique mídias geradas artificialmente com marcadores visuais transparentes (como marcas d'água).</p>
+                </div>
 
-    <footer>
-        <p>&copy; 2026 - Desenvolvido para o Projeto de Educação Digital e IA. Conteúdo Autoral.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <div id="futuro-ia" class="tab-panel">
+                    <h2>Criptografia de Mídia e Autenticidade</h2>
+                    <p>No futuro, o combate à desinformação dependerá de "vacinas digitais" e criptografia de ponta a ponta. Consórcios de tecnologia já desenvolvem metadados inviol
