@@ -1,21 +1,21 @@
-/* Variáveis do Sistema */
 :root {
-    --bg-color: #f4f7f6;
-    --text-color: #333333;
+    --bg-color: #f0f4f8;
+    --text-color: #2d3748;
     --card-bg: #ffffff;
-    --primary-color: #2b6cb0;
+    --primary-color: #3182ce;
     --accent-color: #319795;
+    --border-color: #e2e8f0;
     --footer-bg: #1a202c;
     --footer-text: #ffffff;
 }
 
-/* Modo Escuro ativado via JS */
 body.dark-mode {
     --bg-color: #1a202c;
     --text-color: #edf2f7;
     --card-bg: #2d3748;
     --primary-color: #63b3ed;
     --accent-color: #4fd1c5;
+    --border-color: #4a5568;
 }
 
 * {
@@ -25,18 +25,17 @@ body.dark-mode {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
 }
 
-/* Header Flexbox */
 header {
     background-color: var(--card-bg);
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .header-container {
@@ -51,13 +50,17 @@ header {
     background-color: var(--primary-color);
     color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
+    transition: transform 0.2s;
 }
 
-/* Main e Seções */
+.btn-mode:hover {
+    transform: scale(1.05);
+}
+
 main {
     max-width: 1000px;
     margin: 2rem auto;
@@ -66,10 +69,11 @@ main {
 
 section {
     background-color: var(--card-bg);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+    border: 1px solid var(--border-color);
 }
 
 h2 {
@@ -77,63 +81,161 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/* Layout de Cards com Flexbox */
-.cards-container {
+/* Sistema de Abas (Tabs) */
+.tabs-buttons {
     display: flex;
-    gap: 1rem;
-    background: transparent;
-    padding: 0;
-    box-shadow: none;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    overflow-x: auto; /* Permite rolar abas em telas pequenas */
+    padding-bottom: 5px;
 }
 
-.card {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0.7;
+}
+
+.tab-btn:hover {
+    opacity: 1;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    opacity: 1;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Seção Chat de IA */
+.ia-chat-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+#ia-input {
     flex: 1;
-    border-top: 4px solid var(--accent-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
 }
 
-/* Opções do Formulário */
+#ia-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chat-bubble {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--accent-color);
+    margin-top: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Contador Dinâmico */
+.stats-container {
+    text-align: center;
+}
+
+.counter-box {
+    margin: 1.5rem 0;
+}
+
+#clicks-counter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    display: block;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Formulário e Opções */
 .options {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin: 1rem 0;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
 }
 
 .option-container {
     background-color: var(--bg-color);
-    padding: 0.75rem;
-    border-radius: 6px;
+    padding: 1rem;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.option-container:hover {
+    border-color: var(--primary-color);
 }
 
 #btn-submit {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1rem;
 }
 
-#btn-submit:hover {
-    filter: brightness(0.9);
-}
-
-/* Feedback Dinâmico do JS */
+/* Feedback */
 #quiz-result {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     padding: 1rem;
-    border-radius: 6px;
-    display: none; /* Oculto por padrão, JS ativa mudando para block */
+    border-radius: 8px;
+    display: none;
     font-weight: bold;
 }
 
@@ -151,19 +253,27 @@ h2 {
 
 footer {
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     background-color: var(--footer-bg);
     color: var(--footer-text);
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
-/* Responsividade Média Query */
-@media (max-width: 600px) {
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         gap: 1rem;
     }
-    .cards-container {
+    .tabs-buttons {
+        gap: 0.2rem;
+    }
+    .ia-chat-box {
         flex-direction: column;
     }
 }
