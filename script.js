@@ -1,13 +1,12 @@
-// Aguarda o carregamento completo da página
 document.addEventListener('DOMContentLoaded', () => {
-    
+   
     // 1. MODO ESCURO
     const btnDarkMode = document.getElementById('toggle-dark-mode');
-    
+   
     if (btnDarkMode) {
         btnDarkMode.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            
+           
             if (document.body.classList.contains('dark-mode')) {
                 btnDarkMode.textContent = '☀️ Modo Claro';
             } else {
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Pega o input marcado
             const selected = document.querySelector('input[name="quiz-answer"]:checked');
-            
+           
             if (!selected) return;
 
             const resposta = selected.value;
